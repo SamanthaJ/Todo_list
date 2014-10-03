@@ -1,3 +1,5 @@
-<h3>Tasks</h3>
-
-<!-- <%= render "partials/form" %>
+<%= @tasks.each do |task| %>
+  <%= @task.title %> <br/>
+  <%= @task.description %>
+<% end %>
+<%= render "partials/form" %>
