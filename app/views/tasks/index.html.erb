@@ -2,6 +2,7 @@
   <%= task.title %><br/>
   <%= task.description %>
   <%= time_ago_in_words(task.created_at) %><br/>
+  <%= link_to "Delete", task_path(task), method: :destroy, data: {confirm: "You sure?"} %>
   <br/>
 <% end %>
 <%= render "partials/form" %>
