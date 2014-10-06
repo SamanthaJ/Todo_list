@@ -1,8 +1,19 @@
+<div class= "tasks">
 <% @tasks.each do |task| %>
   <%= task.title %><br/>
-  <%= task.description %>
-  <%= time_ago_in_words(task.created_at) %><br/>
-  <%= link_to "Delete", task_path(task), method: :destroy, data: {confirm: "You sure?"} %>
+  <div id="description">
+    (<%= task.description %>) 
+  </div>
+  <div id="time">
+    <%= time_ago_in_words(task.created_at) %><br/>
+  </div>
+  <div id="delete_edit">
+    <%= link_to "Delete", task, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Edit", edit_task_path(task) %>
+  </div>
   <br/>
 <% end %>
+</div>
+<h3>Add a Task!</h3>
 <%= render "partials/form" %>
+
